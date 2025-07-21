@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <style>
+    /* [same CSS as before — unchanged] */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .task-list {
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .task {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 5px solid #007bff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    .task h3 {
+      margin: 0;
+    }
+    .task small {
+      color: #555;
+    }
+    .delete-btn, .edit-btn {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      float: right;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+    .edit-btn {
+      background: #ffc107;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Task Manager</h1>
+
+<form id="taskForm">
+  <label>Title</label>
+  <input type="text" id="title" required>
+
+  <label>Date</label>
+  <input type="date" id="date" required>
+
+  <label>Priority</label>
+  <select id="priority" required>
+    <option value="">Select Priority</option>
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+  </select>
+
+  <label>Description</label>
+  <textarea id="description" rows="4" required></textarea>
+
+  <button type="submit" id="submitBtn">Add Task</button>
+</form>
+<div style="max-width: 600px; margin: 30px auto 0;">
+  <input type="text" id="searchInput" placeholder="Search tasks..." style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+</div>
+
+<div class="task-list" id="taskList"></div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
